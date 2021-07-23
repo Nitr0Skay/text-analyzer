@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr" class="no-js">
+<head>
+   
+   <meta charset="UTF-8" />
+   <title> Prosty analizator Textu </title> 
+   <script type="text/javascript">(function(H){H.className=H.className.replace(/\bno-js\b/, 'js')})(document.documentElement)</script>
+   <link rel="Stylesheet" type="text/css" href="style.css" />
+     
+</head>
+<body>
+	<header class="page-title">
+		<h1> <a href="index.html" title="Aplikacja analizująca Text"> Kompleksowe analizowanie textu </a> </h1>
+	</header>
+	
+	<section class="introduction" id="introduction">
+		<h2> Aplikacja przeznaczona do analizowania textu </h2>
+		
+		<p> Co oferuje moja aplikacja ? Kilka prostych funcji: </p>
+		<ul>
+			<li> W pierwszej kolejności - zwraca dokładną kopię textu </li>
+			<li> Odwraca kolejność słów - pierwszy wyraz pojawi się na końcu, na tomiast na początku pojawi się ostatnie wpisany wyraz </li>
+			<li> Zwraca ilość wyrazów - w postaci liczby naturalnej </li>
+			<li> Zwraca ilość różnych wyrazów, oraz ilość ich wystąpień - w postaci liczby naturalnej </li>
+			<li> Zwraca ilość znaków wraz z białymi znakami - w postaci liczby naturalnej </li>
+			<li> Zwraca ilość białych znaków - w postaci liczby naturalnej </li>
+			<li> Zwraca ilość znaków bez uwzględniania białych znaków - w postaci liczby naturalnej </li>
+			<li> Udostępnia kompleksową analizę wyrazów w formie przejrzystej tabelki </li>
+		</ul>
+		
+		<button type="button" id="start" class="start-button"> Rozpocznij przetwarzanie Textu </button>
+	</section>
+	
+	<section class="true-content" id="content">
+		<h2> Wprowadź analizowany text </h2>
+		
+		<div class="areatext" id="areatext">
+			<p> W poniższym polu wprowadź Text, który ma zostać poddany analizie... </p>
+			<textarea name="text" id="area" class="text-alayzer">Usuń ten text i wprowadź zamiast niego wartość textową...</textarea>
+			<button type="button" id="analys" class="analyze-button"> Wciśnij, jeżeli nie pojawi się rezultat </button>
+			<button type="button" id="clear" class="clear-button"> Wyczyść całą Zawartość </button>
+		</div>
+		
+		<section id="results" class="analyze-results">
+			<h3 class="visually-hidden"> Podstawowa analiza </h3>
+			
+			<p id="real-text"> Wpisano: </p>
+			<p id="words-reverse"> Wyrazy od tyłu: </p>
+			<p id="text-reverse"> Text od tyłu: </p>
+			<p id="char-count"> Ilość znaków: </p>
+			<p id="white-space-count"> Ilość białych znaków: </p>
+			<p id="letters-count"> Ilość znaków bez białych znaków: </p>
+			<p id="words-count"> Ilość wyrazów: </p>
+		</section>
+		
+		<section id="word-analyze" class="word-analyze">
+			<h3 class="visually-hidden"> Analiza słownictwa </h3>
+			
+			<table>
+				<tr>
+					<th> Słowo </th>
+					<th> Liczba powtórzeń </th>
+					<th> Zagęszczenie w podanym tekście </th>
+				</tr>
+			</table>
+		</section>
+	</section>
+
+	
+	<script type="text/javascript" src="script.js" charset="utf-8"></script>
+</body>
+</html>
