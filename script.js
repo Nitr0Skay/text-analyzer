@@ -1,7 +1,6 @@
 (function() {
 	'use strict';
 
-	let text = '';
 	const areaText = document.getElementById('area');
 	const analyzeButton = document.getElementById('analys');
 
@@ -77,8 +76,8 @@
 			document.getElementById('words-count').innerHTML = 'Ilość wyrazów: 0';
 	}
 
-	function init(text) {
-		text = areaText.value;
+	function init() {
+		let text = areaText.value;
 
 		realText(text);
 		wordsReverse(text);
@@ -90,7 +89,7 @@
 	}
 
 
-	areaText.addEventListener('input', function(e) { init(text); }, false);
-	analyzeButton.addEventListener('click', function(e) { init(text); }, false);
+	areaText.addEventListener('input', function(e) { init(); }, false);
+	analyzeButton.addEventListener('click', function(e) { init(); }, false);
 
 })();
