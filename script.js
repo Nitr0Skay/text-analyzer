@@ -3,6 +3,7 @@
 
 	const areaText = document.getElementById('area');
 	const analyzeButton = document.getElementById('analys');
+	const clearButton = document.getElementById('clear');
 
 
 	//real-text
@@ -88,8 +89,14 @@
 		wordsCount(text);
 	}
 
+	function clearText(text) {
+		text.innerHTML = '';
+		text.value = '';
+	}
+
 
 	areaText.addEventListener('input', function(e) { init(); }, false);
 	analyzeButton.addEventListener('click', function(e) { init(); }, false);
+	clearButton.addEventListener('click', function(e) { clearText(areaText); }, false);
 
 })();
