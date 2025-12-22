@@ -6,12 +6,12 @@
 	const clearButton = document.getElementById('clear');
 
 
-	//real-text
+	//This function shows us the unchanged version of received text
 	function realText(text) {
 		document.getElementById('real-text').innerHTML = 'Wpisano: ' + text;
 	}
 
-	//words-reverse
+	//This function splits received text into words and shows us unchanged words in reversed order
 	function wordsReverse(text) {
 		let words = text.split(' ');
 		let reverseWords = '';
@@ -23,7 +23,7 @@
 		document.getElementById('words-reverse').innerHTML = 'Wyrazy od tyłu: ' + reverseWords;
 	}
 
-	//text-reverse
+	//This function is reversing received text and shows it to us
 	function textReverse(text) {
 		let reverseText = '';
 
