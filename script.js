@@ -10,7 +10,7 @@
 
 		//This function shows us the unchanged version of received text
 		function realText(text) {
-			document.getElementById('real-text').innerHTML = 'Wpisano: ' + text;
+			document.getElementById('real-text').textContent = 'Wpisano: ' + text;
 		}
 
 		//This function splits received text into words and shows us unchanged words in reversed order
@@ -22,7 +22,7 @@
 				reverseWords += words[i] + ' ';
 			}
 
-			document.getElementById('words-reverse').innerHTML = 'Wyrazy od tyłu: ' + reverseWords;
+			document.getElementById('words-reverse').textContent = 'Wyrazy od tyłu: ' + reverseWords;
 		}
 
 		//This function is reversing received text and shows it to us
@@ -33,12 +33,12 @@
 				reverseText += text[i];
 			}
 
-			document.getElementById('text-reverse').innerHTML = 'Text od tyłu: ' + reverseText;
+			document.getElementById('text-reverse').textContent = 'Text od tyłu: ' + reverseText;
 		}
 
 		//char-count
 		function charCount(text) {
-			document.getElementById('char-count').innerHTML = 'Ilość znaków: ' + text.length;
+			document.getElementById('char-count').textContent = 'Ilość znaków: ' + text.length;
 		}
 
 		//white-space-count
@@ -49,7 +49,7 @@
 				if(text.charAt(i) == ' ') whiteSpaces++;
 			}
 
-			document.getElementById('white-space-count').innerHTML = 'Ilość białych znaków: ' + whiteSpaces;
+			document.getElementById('white-space-count').textContent = 'Ilość białych znaków: ' + whiteSpaces;
 		}
 
 		//letter-count
@@ -60,7 +60,7 @@
 				if(text.charAt(i) == ' ') letters--;
 			}
 
-			document.getElementById('letters-count').innerHTML = 'Ilość znaków bez białych znaków: ' + letters;
+			document.getElementById('letters-count').textContent = 'Ilość znaków bez białych znaków: ' + letters;
 		}
 
 		//words-count
@@ -72,11 +72,11 @@
 				for(let i = 0; i < words.length; i++) {
 					if(words[i] == '' || words[i] == ' ') wordsCount--;
 				}
-				document.getElementById('words-count').innerHTML = 'Ilość wyrazów: ' + wordsCount;
+				document.getElementById('words-count').textContent = 'Ilość wyrazów: ' + wordsCount;
 			}
 
 			else
-				document.getElementById('words-count').innerHTML = 'Ilość wyrazów: 0';
+				document.getElementById('words-count').textContent = 'Ilość wyrazów: 0';
 		}
 
 		function init() {
@@ -92,7 +92,7 @@
 		}
 
 		function clearText(text) {
-			text.innerHTML = '';
+			text.textContent = '';
 			text.value = '';
 		}
 
