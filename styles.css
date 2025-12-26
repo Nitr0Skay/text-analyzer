@@ -45,6 +45,11 @@ h1 {
     font-size: 3rem;
 }
 
+h2 {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
 nav {
     height: 6.66vh;
     width: 100%;
