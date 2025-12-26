@@ -130,6 +130,19 @@ header a:hover {
     color: var(--bg-color);
 }
 
+.analyze-results {
+    margin-top: 2rem;
+}
+
+.analyze-results pre {
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+.analyze-results p {
+    margin-left: 0;
+}
+
 #nickname {
     text-decoration: underline dotted;
     transition: 0.5s all;
