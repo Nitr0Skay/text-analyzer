@@ -3,14 +3,37 @@
 
 	document.addEventListener('DOMContentLoaded', function(event) {
 
+		window.i18n = {
+			pl: {
+				realText: "Wpisano: ",
+				wordsReverse: "Wyrazy od tyłu: ",
+				textReverse: "Text od tyłu: ",
+				charCount: "Ilość znaków: ",
+				whiteSpaceCount: "Ilość białych znaków: ",
+				lettersCount: "Ilość znaków bez białych znaków: ",
+				wordsCount: "Ilość wyrazów: "
+			},
+			en: {
+				realText: "Entered text: ",
+				wordsReverse: "Words reversed: ",
+				textReverse: "Text reversed: ",
+				charCount: "Number of characters: ",
+				whiteSpaceCount: "Number of white spaces: ",
+				lettersCount: "Number of letters (no spaces): ",
+				wordsCount: "Number of words: "
+			}
+		};
+
+		const i18n = window.i18n;
 		const areaText = document.getElementById('area');
 		const analyzeButton = document.getElementById('analys');
 		const clearButton = document.getElementById('clear');
-
-
+		const selectLanguage = document.getElementById('lang-select');
+		let currentLang = selectLanguage || document.documentElement.lang;
+		
 		//This function shows us the unchanged version of received text
 		function realText(text) {
-			document.getElementById('real-text').textContent = 'Wpisano: ' + text;
+			document.getElementById('real-text').textContent = i18n[currentLang].realText + text;
 		}
 
 		//This function splits received text into words and shows us unchanged words in reversed order
@@ -22,7 +45,7 @@
 				reverseWords += words[i] + ' ';
 			}
 
-			document.getElementById('words-reverse').textContent = 'Wyrazy od tyłu: ' + reverseWords;
+			document.getElementById('words-reverse').textContent = i18n[currentLang].wordsReverse + reverseWords;
 		}
 
 		//This function is reversing received text and shows it to us
@@ -33,12 +56,12 @@
 				reverseText += text[i];
 			}
 
-			document.getElementById('text-reverse').textContent = 'Text od tyłu: ' + reverseText;
+			document.getElementById('text-reverse').textContent = i18n[currentLang].textReverse + reverseText;
 		}
 
 		//char-count
 		function charCount(text) {
-			document.getElementById('char-count').textContent = 'Ilość znaków: ' + text.length;
+			document.getElementById('char-count').textContent = i18n[currentLang].charCount + text.length;
 		}
 
 		//white-space-count
@@ -49,7 +72,7 @@
 				if(text.charAt(i) == ' ') whiteSpaces++;
 			}
 
-			document.getElementById('white-space-count').textContent = 'Ilość białych znaków: ' + whiteSpaces;
+			document.getElementById('white-space-count').textContent = i18n[currentLang].whiteSpaceCount + whiteSpaces;
 		}
 
 		//letter-count
@@ -60,7 +83,7 @@
 				if(text.charAt(i) == ' ') letters--;
 			}
 
-			document.getElementById('letters-count').textContent = 'Ilość znaków bez białych znaków: ' + letters;
+			document.getElementById('letters-count').textContent = i18n[currentLang].lettersCount + letters;
 		}
 
 		//words-count
@@ -72,11 +95,11 @@
 				for(let i = 0; i < words.length; i++) {
 					if(words[i] == '' || words[i] == ' ') wordsCount--;
 				}
-				document.getElementById('words-count').textContent = 'Ilość wyrazów: ' + wordsCount;
+				document.getElementById('words-count').textContent = i18n[currentLang].wordsCount + wordsCount;
 			}
 
 			else
-				document.getElementById('words-count').textContent = 'Ilość wyrazów: 0';
+				document.getElementById('words-count').textContent = i18n[currentLang].wordsCount + " 0";
 		}
 
 		function init() {
@@ -94,12 +117,18 @@
 		function clearText(text) {
 			text.textContent = '';
 			text.value = '';
+			init();
 		}
 
 
 		areaText.addEventListener('input', function(e) { init(); }, false);
 		analyzeButton.addEventListener('click', function(e) { init(); }, false);
 		clearButton.addEventListener('click', function(e) { clearText(areaText); }, false);
+		selectLanguage.addEventListener('change', function(e) {
+			currentLang = selectLanguage.value;
+			document.documentElement.lang = currentLang;
+			init();
+		});
 
 	});
 

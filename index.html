@@ -7,8 +7,7 @@
    <script type="text/javascript">(function(H){H.className=H.className.replace(/\bno-js\b/, 'js')})(document.documentElement)</script>
    <link rel="Stylesheet" type="text/css" href="styles.css" />
    <script type="text/javascript" src="script.js" charset="utf-8" defer></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-HoKXrpU5RgrscF0S1xV6fG6iQfWCp0Bmtf7oX2/6tT5wXUMPtFTiN5mZDvRISTbpMylmpZ7oraPAJ2XnkXYm8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+   
 </head>
 <body>
 	<header class="page-title">
@@ -27,7 +26,13 @@
 			<li> Zwraca ilość znaków wraz z białymi znakami - w postaci liczby naturalnej </li>
 			<li> Zwraca ilość białych znaków - w postaci liczby naturalnej </li>
 			<li> Zwraca ilość znaków bez uwzględniania białych znaków - w postaci liczby naturalnej </li>
-			<li> Można zmienić język na Angielski </li>
+			<li>
+				 Można zmienić język na Angielski 
+				 <select id="lang-select">
+        			<option value="pl">PL</option>
+        			<option value="en">EN</option>
+    			</select>
+			</li>
 			<li> <button id="theme-toggle"> Dark Mode </button> </li>
 		</ul>
 	</section>
